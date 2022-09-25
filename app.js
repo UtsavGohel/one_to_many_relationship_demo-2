@@ -6,7 +6,14 @@ var db = require("./index");
 console.log(db);
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost/grocerydb", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://root:root@cluster1.wemcs0r.mongodb.net/groceryDB",
+{ useNewUrlParser: true }).then(
+  ()=>{
+      console.log('connected to mongodb')
+  }
+).catch((err)=>{
+  console.log("not connected",err);
+});
 
 var PORT = 3000;
 
